@@ -1,0 +1,71 @@
+@baseColor: #202020;
+@secondaryColor: #2e2e2e;
+@tertiaryColor: #444444;
+@warningColor: #096900;
+@warning2Color: #086600;
+@controlColor: rgba(0, 0, 0, 0.0);
+@hoverColor: darken(@warningColor, 5%);
+@hoverBg2Color: #696969;
+@hoverBgColor: #616161;
+@contrastColor: #b9b9b9;
+@borderColor: @tertiaryColor;
+@selectedColor: @warningColor;
+@disabledSelectedColor: desaturate(mix(@baseColor, @selectedColor, 25%), 50%);
+@headerColor: @tertiaryColor;
+@highlightColor: @warningColor;
+@highlightBgColor: @highlightColor;
+@invertedColor: black;
+@invertedSecondaryColor: #888888;
+@titleBarTextColor: rgb(228, 228, 228);
+
+@windowBorderColor: #096b00;
+
+@baseFontSize: 12px;
+@fontLineSize: @units1_1;
+
+@font-face { font-family: NotoSans; src: url("/skin/fonts/NotoSans-Regular.ttf"); }
+@font-face { font-family: NotoSans; src: url("/skin/fonts/NotoSans-Bold.ttf"); font-weight: bold; }
+
+// colors used for selection icons
+@selectedBgColor: @tertiaryColor;
+@selectedBgColorR: fade(@selectedBgColor, 85%); // for rows
+@selectedHoverColor: mix(@selectedBgColor, @hoverColor);
+
+body {
+    font-family: NotoSans, sans-serif;
+}
+
+.sidePanel {
+    background-color: @secondaryColor;
+}
+
+.verticalPanel {
+	.sidePanel;
+}
+
+.verticalPanel .transparentBackground {
+    background-color: fadeout(@secondaryColor, @transparentFadeout);
+}
+
+.verticalPanelNarrow {
+	.sidePanel;
+}
+
+[data-id=toolbuttons] {
+    background-color: @tertiaryColor;
+}
+
+[data-control-class=MainTabs] {
+    //background-color: @highlightColor;
+	//color: @invertedColor;
+	//fill: @invertedColor;
+}
+
+[data-control-class=MainTabs] .tabsHeader[data-selected] {
+    background-color: @highlightColor;
+    color: @titleBarTextColor;
+	fill: @titleBarTextColor;
+    border-bottom: none;
+    font-weight: bold;
+//    border-bottom: 1px solid@highlightColor;
+}
